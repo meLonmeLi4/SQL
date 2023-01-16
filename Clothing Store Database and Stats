@@ -1,0 +1,18 @@
+--Create a store database
+
+CREATE TABLE clothing (id INTEGER PRIMARY KEY, name TEXT, quantity INTEGER, shelf_number INTEGER, color TEXT, cost INTEGER);
+
+INSERT INTO clothing VALUES (1, "Shirts", 5, 2, "emerald green, gray, black, white", 10);
+INSERT INTO clothing VALUES (2, "Cardigans", 4, 1, "biege, black, gray", 25);
+INSERT INTO clothing VALUES (3, "Jeans", 3, 4, "light wash, dark wash", 40);
+INSERT INTO clothing VALUES (4, "Socks", 6, 3, "black, grey, emerald green, brown", 6);
+
+--display the database ordered by price. 
+SELECT * FROM clothing ORDER BY cost;
+
+--how much product is still in stock.
+SELECT SUM(quantity) FROM clothing;
+
+--what is the average cost per item.
+SELECT AVG(cost)
+FROM clothing
